@@ -4,15 +4,15 @@
  */
 package tiendaderopa.views;
 
+import tiendaderopa.Controllers.ProductosControllers;
+import tiendaderopa.Singleton.SingletoCodigo;
+
 /**
  *
  * @author Emanuel López
  */
 public class AgregarProducto extends javax.swing.JFrame {
-
-    /**
-     * Creates new form AgregarProducto
-     */
+    ProductosControllers productosControllers = new ProductosControllers();
     public AgregarProducto() {
         initComponents();
     }
@@ -35,11 +35,13 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtNombre = new javax.swing.JTextField();
+        txtPrecio = new javax.swing.JTextField();
+        txtCantidadStock = new javax.swing.JTextField();
+        txtCategoria = new javax.swing.JTextField();
+        btnAceptar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        btnVerDatos = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -68,36 +70,58 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel6.setText("Cantidad en Stock:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtNombre.setName("txtNombre"); // NOI18N
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtNombreActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 152, -1));
+        jPanel1.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 70, 152, -1));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        txtPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                txtPrecioActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 152, -1));
+        jPanel1.add(txtPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 130, 152, -1));
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        txtCantidadStock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtCantidadStockActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 152, -1));
+        jPanel1.add(txtCantidadStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 160, 152, -1));
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtCategoriaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 152, -1));
+        jPanel1.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 152, -1));
 
-        jButton1.setText("Aceptar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
+        btnAceptar.setText("Aceptar");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, -1, -1));
+
+        btnSalir.setText("Cerrar");
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
+
+        btnVerDatos.setText("Ver Datos");
+        btnVerDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerDatosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnVerDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -113,21 +137,41 @@ public class AgregarProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void txtPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPrecioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_txtPrecioActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void txtCantidadStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadStockActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_txtCantidadStockActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtCategoriaActionPerformed
+
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSalirActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+        int codigoNuevo = SingletoCodigo.getInstancia().generarId();
+        String nombreNuevo = this.txtNombre.getText();
+        String categoriaNuevo = this.txtCategoria.getText();
+        float precioNuevo = Float.parseFloat(txtPrecio.getText());
+        int CantidadStoNueva = Integer.parseInt(txtCantidadStock.getText());
+        
+        productosControllers.AgregarProductos(codigoNuevo, nombreNuevo, categoriaNuevo, precioNuevo, CantidadStoNueva);
+        LimpiarDatos();
+
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void btnVerDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosActionPerformed
+        productosControllers.verProductos();
+    }//GEN-LAST:event_btnVerDatosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,9 +207,17 @@ public class AgregarProducto extends javax.swing.JFrame {
             }
         });
     }
+    public void LimpiarDatos(){
+        txtNombre.setText("");
+        txtCategoria.setText("");
+        txtPrecio.setText("");
+        txtCantidadStock.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnVerDatos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -175,9 +227,9 @@ public class AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField txtCantidadStock;
+    private javax.swing.JTextField txtCategoria;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtPrecio;
     // End of variables declaration//GEN-END:variables
 }

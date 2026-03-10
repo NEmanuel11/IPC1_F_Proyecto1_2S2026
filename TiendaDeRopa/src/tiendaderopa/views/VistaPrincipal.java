@@ -9,7 +9,7 @@ package tiendaderopa.views;
  * @author Emanuel López
  */
 public class VistaPrincipal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form VistaPrincipal
      */
@@ -146,7 +146,9 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        DatosDelEstudiante datosDelEstudiante = new DatosDelEstudiante();
+        datosDelEstudiante.setVisible(true);
+        datosDelEstudiante.setTitle("Información del Estudiante");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
