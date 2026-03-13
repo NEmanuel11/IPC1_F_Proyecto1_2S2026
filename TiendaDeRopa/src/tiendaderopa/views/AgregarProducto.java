@@ -158,15 +158,40 @@ public class AgregarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        int codigoNuevo = SingletoCodigo.getInstancia().generarId();
-        String nombreNuevo = this.txtNombre.getText();
-        String categoriaNuevo = this.txtCategoria.getText();
-        float precioNuevo = Float.parseFloat(txtPrecio.getText());
-        int CantidadStoNueva = Integer.parseInt(txtCantidadStock.getText());
-        
-        productosControllers.AgregarProductos(codigoNuevo, nombreNuevo, categoriaNuevo, precioNuevo, CantidadStoNueva);
-        LimpiarDatos();
+        //Excepcion de erro si en algun dado caso el usuario no ingresa los Datos Correctos
+         // Validar que los campos no estén vacíos
+       if(txtNombre.getText().trim().isEmpty() ||
+       txtCategoria.getText().trim().isEmpty() ||
+       txtPrecio.getText().trim().isEmpty() ||
+       txtCantidadStock.getText().trim().isEmpty()){
 
+        System.out.println("Todos los campos deben llenarse");
+        return; // detiene el método
+        }
+        try{
+            int codigoNuevo = SingletoCodigo.getInstancia().generarId();
+            String nombreNuevo = this.txtNombre.getText();
+            String categoriaNuevo = this.txtCategoria.getText();
+            float precioNuevo = Float.parseFloat(txtPrecio.getText());
+            int cantidadStoNueva = Integer.parseInt(txtCantidadStock.getText());
+            //Condicion para que el precio y la cantidad sean positivas
+            if(precioNuevo>0 && cantidadStoNueva>0){
+                productosControllers.AgregarProductos(codigoNuevo, nombreNuevo, categoriaNuevo, precioNuevo, cantidadStoNueva);   
+                LimpiarDatos();
+            }
+            //En caso que sea negativo, limpia el texto.
+            else if(precioNuevo<0){
+                    txtPrecio.setText(" ");
+                    System.out.println("Precio Invalido!");
+            }else if(cantidadStoNueva<0){
+                    txtCantidadStock.setText(" ");
+                    System.out.println("Cantidad Invalida!");
+            }
+        }
+        catch(NumberFormatException e){
+            System.out.println("Ingrese los datos Correctos ");
+        }
+        
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     private void btnVerDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerDatosActionPerformed

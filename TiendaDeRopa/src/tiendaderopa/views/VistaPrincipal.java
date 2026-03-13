@@ -106,9 +106,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenu7.add(jMenuItem4);
 
         jMenuItem5.setText("Buscar Productos");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem5);
 
         jMenuItem6.setText("Eliminar Productos");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem6);
 
         jMenu2.add(jMenu7);
@@ -156,6 +166,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
         agregarProducto.setVisible(true);
         agregarProducto.setTitle("Agregar Productos");
     }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        BuscarProductos actuializarProductos = new BuscarProductos();
+        actuializarProductos.setVisible(true);
+        actuializarProductos.setTitle("Actualizar Productos.");
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        EliminarProducto eliminarProducto = new EliminarProducto();
+        eliminarProducto.setVisible(true);
+        eliminarProducto.setTitle("Eliminar Productos.");
+
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
     /**
      * @param args the command line arguments

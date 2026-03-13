@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package tiendaderopa.Models;
 
 /**
@@ -6,7 +9,7 @@ package tiendaderopa.Models;
  * @author Emanuel López
  */
 public class ProductosModels {
-    //Variables de los productos.
+        //Variables de los productos.
     private int codigoPro;
     private String nombrePro;
     private String categoriaPro;
@@ -53,7 +56,4 @@ public class ProductosModels {
     public void setCantidadStock(int cantidadStock) {
         this.cantidadStock = cantidadStock;
     }
-    
-   
-    
 }
