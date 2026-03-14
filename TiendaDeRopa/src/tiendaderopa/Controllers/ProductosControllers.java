@@ -1,4 +1,7 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package tiendaderopa.Controllers;
 
 import javax.swing.table.DefaultTableModel;
@@ -9,7 +12,7 @@ import tiendaderopa.Models.ProductosModels;
  * @author Emanuel López
  */
 public class ProductosControllers {
-    public static ProductosModels[] datosProductos = new ProductosModels[100];
+      public static ProductosModels[] datosProductos = new ProductosModels[100];
     //Meto para Agrgar Productos
     public void AgregarProductos(int codigoPro, String nombrePro, String categoriaPro, float precioPro, int cantidadStock){
         //Añadiendo los datos al arreglo:
@@ -67,7 +70,24 @@ public class ProductosControllers {
         }
     }
     //Metodo para eliminar Productos.
-    
+    public void EliminarProductoCodi(int codigoPro){
+            for(int i = 0; i < datosProductos.length; i++){
+
+        if(datosProductos[i] != null && datosProductos[i].getCodigoPro() == codigoPro){
+
+            for(int j = i; j < datosProductos.length - 1; j++){
+                datosProductos[j] = datosProductos[j + 1];
+            }
+
+            datosProductos[datosProductos.length - 1] = null;
+
+            System.out.println("Producto eliminado");
+            return;
+        }
+    }
+
+    System.out.println("Producto no encontrado");
+    }
     
     
     //Ver los productos:

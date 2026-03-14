@@ -158,8 +158,8 @@ public class AgregarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
-        //Excepcion de erro si en algun dado caso el usuario no ingresa los Datos Correctos
-         // Validar que los campos no estén vacíos
+       //Excepcion de erro si en algun dado caso el usuario no ingresa los Datos Correctos
+       // Validar que los campos no estén vacíos
        if(txtNombre.getText().trim().isEmpty() ||
        txtCategoria.getText().trim().isEmpty() ||
        txtPrecio.getText().trim().isEmpty() ||

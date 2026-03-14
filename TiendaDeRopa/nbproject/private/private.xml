@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/views/EliminarProducto.java</file>
+            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/views/AgregarVentas.java</file>
+            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/Models/VentasModels.java</file>
+            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/Models/ProductosModels.java</file>
+            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/views/AgregarProducto.java</file>
             <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/Controllers/ProductosControllers.java</file>
+            <file>file:/C:/Users/Emanuel%20López/Documents/TAREA%20U/Proyecto1_08032026/TiendaDeRopa/src/tiendaderopa/Controllers/VentasControllers.java</file>
         </group>
     </open-files>
 </project-private>
